@@ -11,4 +11,11 @@
 
   <artifactId>ruoyi-business</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.ruoyi</groupId>
+      <artifactId>ruoyi-framework</artifactId>
+    </dependency>
+  </dependencies>
+
 </project>

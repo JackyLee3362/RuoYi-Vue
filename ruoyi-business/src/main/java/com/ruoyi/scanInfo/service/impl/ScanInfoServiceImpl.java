@@ -1,11 +1,13 @@
 package com.ruoyi.scanInfo.service.impl;
 
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.ruoyi.scanInfo.mapper.ScanInfoMapper;
+import com.ruoyi.scanInfo.constant.ScanInfoConstants;
 import com.ruoyi.scanInfo.domain.ScanInfo;
+import com.ruoyi.scanInfo.exception.BusinessException;
+import com.ruoyi.scanInfo.mapper.ScanInfoMapper;
 import com.ruoyi.scanInfo.service.IScanInfoService;
+import java.util.List;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
 
 /**
  * 随申码Service业务层处理
@@ -16,7 +18,7 @@ import com.ruoyi.scanInfo.service.IScanInfoService;
 @Service
 public class ScanInfoServiceImpl implements IScanInfoService 
 {
-    @Autowired
+    @Resource
     private ScanInfoMapper scanInfoMapper;
 
     /**
@@ -52,7 +54,8 @@ public class ScanInfoServiceImpl implements IScanInfoService
     @Override
     public int insertScanInfo(ScanInfo scanInfo)
     {
-        return scanInfoMapper.insertScanInfo(scanInfo);
+        throw new BusinessException(ScanInfoConstants.moduleName, "新增失败");
+        // return scanInfoMapper.insertScanInfo(scanInfo);
     }
 
     /**
@@ -64,7 +67,8 @@ public class ScanInfoServiceImpl implements IScanInfoService
     @Override
     public int updateScanInfo(ScanInfo scanInfo)
     {
-        return scanInfoMapper.updateScanInfo(scanInfo);
+        throw new BusinessException(ScanInfoConstants.moduleName, "修改失败");
+        // return scanInfoMapper.updateScanInfo(scanInfo);
     }
 
     /**
@@ -76,7 +80,8 @@ public class ScanInfoServiceImpl implements IScanInfoService
     @Override
     public int deleteScanInfoByIds(Long[] ids)
     {
-        return scanInfoMapper.deleteScanInfoByIds(ids);
+        throw new BusinessException(ScanInfoConstants.moduleName, "删除失败");
+        // return scanInfoMapper.deleteScanInfoByIds(ids);
     }
 
     /**
@@ -88,6 +93,7 @@ public class ScanInfoServiceImpl implements IScanInfoService
     @Override
     public int deleteScanInfoById(Long id)
     {
-        return scanInfoMapper.deleteScanInfoById(id);
+        throw new BusinessException(ScanInfoConstants.moduleName, "删除失败");
+        // return scanInfoMapper.deleteScanInfoById(id);
     }
 }
